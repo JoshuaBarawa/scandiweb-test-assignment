@@ -12,7 +12,8 @@ function ProductList() {
 
     useEffect(() => {
         if (!isRunned.current) {
-            getAllProducts().then(res => setProducts(res.data.products)) 
+            getAllProducts().then(res => res.data.products? setProducts(res.data?.products) : products) 
+
         }
         return () => {
             isRunned.current = true;
@@ -45,20 +46,20 @@ const handleDeleteProducts = () => {
 
 
             <div className="products">
-                {products.map((product) =>
+                {products.length < 1? "No Products Available..." : 
+                products.map((product) =>
                     <div className='product_card' key={product.id}>
                         <input type="checkbox" className="delete-checkbox" onClick={() => handleSelectProduct(product)}/>
                         <div className="card-details">
                         <p>{product.sku}</p>
                         <p>{product.name}</p>
-                        <p>{product.price} $</p>
-                        <p>{product.productType === 'DVD'? `Size: ${product.size}` 
+                        <p>{parseInt(product.price).toFixed(2)} $</p>
+                        <p>{product.productType === 'DVD'? `Size: ${product.size} MB` 
                         :product.productType === 'Furniture'? `Dimensions: ${product.height}x${product.width}x${product.length} ` 
-                        :product.productType === 'Book'? `Weight: ${product.weight}`:''}</p>
+                        :product.productType === 'Book'? `Weight: ${product.weight} KG`:''}</p>
                         </div>
                 </div>)}
             </div>
-
         </div>
     )
 }
