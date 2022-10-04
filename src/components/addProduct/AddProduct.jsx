@@ -61,7 +61,7 @@ function AddProduct() {
                 handleChange={handleOnChange} errorMessage={errorMessage} />
 
 
-<SelectField name="productType" id="productType" label='Type Switcher' selects={selects} required={true} 
+<SelectField name="productType" label='Type Switcher' selects={selects} required={true} 
                 placeholder='Choose product type' handleChange={handleOnChange}  errorMessage={errorMessage} />
 
        
