@@ -39,8 +39,8 @@ const handleDeleteProducts = () => {
             <div id='form_title'>
                         <p id="title">Product List</p>
                     <div className="form_buttons">
-                    <Link type='button' id='add_button' to='/add-product'>Add</Link>
-                    <button type='submit' id='delete_button' onClick={() => handleDeleteProducts()}>Mass Delete</button>
+                    <Link type='button' id='add_button' to='/add-product'>ADD</Link>
+                    <button type='submit' id='delete_button' onClick={() => handleDeleteProducts()}>MASS DELETE</button>
                     </div>
             </div>
 
