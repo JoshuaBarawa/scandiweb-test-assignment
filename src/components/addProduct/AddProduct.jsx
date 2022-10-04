@@ -30,9 +30,9 @@ function AddProduct() {
     }
 
     
-    const handleCreateProduct = () => {
-        createProduct(product)
-        //navigate('/')
+    const handleCreateProduct = (e) => {
+        e.preventDefault()
+        createProduct(product).then(() => navigate("/"))
     }
 
 
