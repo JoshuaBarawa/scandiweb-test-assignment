@@ -1,0 +1,87 @@
+.product_section {
+    padding: 10px 100px;
+    min-height: 90vh;
+    position: relative;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.product_card {
+    display: flex;
+    padding: 15px 10px;
+    border-radius: 7px;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 0 1.5rem 0 rgb(136 152 170 / 15%);
+    height: 120px;
+    background-color: #fff;
+}
+
+
+#form_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px rgb(214, 208, 208) solid;
+    padding: 10px 0px;
+    margin-bottom: 15px;
+    min-height: fit-content;
+}
+
+#title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.form_buttons {
+    display: flex;
+    align-items: center;
+}
+
+#add_button {
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 8px 25px;
+    color: rgb(255, 255, 255) !important;
+    border: none;
+    text-decoration: none;
+    background-color: rgb(78, 180, 92);
+}
+
+#delete_button {
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 8px 25px;
+    color: rgb(255, 255, 255) !important;
+    border: none;
+    text-decoration: none;
+    background-color: #ea5455;
+}
+
+#add_button:hover {
+    background-color: rgb(136, 196, 144);
+}
+
+#delete_button:hover {
+    background-color: #f08686;
+}
+
+.delete-checkbox{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+}
+
+.card-details{
+   width: 80%;
+   text-align: center;
+   margin: auto;
+}

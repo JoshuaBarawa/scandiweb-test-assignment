@@ -1,0 +1,13 @@
+.footer{
+    background-color: #28c76f;
+    position: relative;
+    bottom: 0% !important;
+    z-index: -1;
+    width: 87%;
+    margin: auto;
+    border-radius: 3px;
+    padding: 20px 5px;
+    color: rgb(235, 228, 228);
+   font-size: 18px;
+   text-align: center;
+}

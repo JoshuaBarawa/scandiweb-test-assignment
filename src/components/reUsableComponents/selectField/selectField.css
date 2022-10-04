@@ -1,0 +1,45 @@
+.select-group{
+    display: flex;
+    flex-direction: column; 
+}
+
+.form-label{
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(38, 39, 39);
+}
+
+.select-control{
+    padding: 7px 5px;
+    border-radius: 3px;
+    border: 1px rgb(175, 166, 166) solid;
+    font-size:13px;
+    background-color: rgb(240, 240, 240);
+    
+}
+
+.select-control:focus{
+    outline: none;
+    border-color: #31bb5f;
+    box-shadow: 0 0 3px #31bb5f;
+    background-color: rgb(255, 255, 255);
+}
+
+select:invalid[focused=true]{
+    border-color:rgb(221, 34, 34);
+}
+
+select:invalid[focused=true] ~ span{
+    display: block;
+}
+
+
+option:hover {
+    background-color:#1882A8 inset;
+}
+
+select {
+    -webkit-appearance: none;  /* for webkit (safari, chrome) compatibility */
+    -moz-appearance: none; /* for firefox compatibility */
+    appearance: none;
+  }
