@@ -66,4 +66,9 @@
     margin: 20px 0px;
 }
 
+#skuError{
+font-size: 12px;
+color: rgb(221, 34, 34);
+margin-top: 5px;
+}
 
