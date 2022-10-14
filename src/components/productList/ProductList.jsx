@@ -12,7 +12,7 @@ function ProductList() {
 
     useEffect(() => {
         if (!isRunned.current) {
-            getAllProducts().then(res => res.data.products ? setProducts(res.data?.products) : products)
+            getAllProducts().then(res => res.data ? setProducts(res.data) : products)
 
         }
         return () => {
@@ -20,7 +20,7 @@ function ProductList() {
         };
     }, [products])
 
-
+    console.log(products)
 
     const handleSelectProduct = (product) => {
         let newArr = [...selected, product]
@@ -28,8 +28,9 @@ function ProductList() {
     }
 
     const handleDeleteProducts = () => {
-        selected.map(item => (deleteProduct(item.id)));
+        selected.map(item => deleteProduct(item.id));
         setProducts(products.filter(value => !selected.includes(value)))
+       
     }
 
     return (
@@ -54,9 +55,9 @@ function ProductList() {
                                 <p>{product.sku}</p>
                                 <p>{product.name}</p>
                                 <p>{parseInt(product.price).toFixed(2)} $</p>
-                                <p>{product.productType === 'DVD' ? `Size: ${product.size} MB`
-                                    : product.productType === 'Furniture' ? `Dimensions: ${product.height}x${product.width}x${product.length} `
-                                        : product.productType === 'Book' ? `Weight: ${product.weight} KG` : ''}</p>
+                                <p>{product.type === 'DVD' ? `Size: ${product.size} MB`
+                                    : product.type === 'Furniture' ? `Dimensions: ${product.height}x${product.width}x${product.length} `
+                                        : product.type === 'Book' ? `Weight: ${product.weight} KG` : ''}</p>
                             </div>
                         </div>)}
             </div>

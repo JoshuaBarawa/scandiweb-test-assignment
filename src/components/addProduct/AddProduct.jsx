@@ -17,7 +17,7 @@ function AddProduct() {
         sku: '',
         name: '',
         price: '',
-        productType: '',
+        type: '',
         size: null,
         height: null,
         width: null,
@@ -32,7 +32,7 @@ function AddProduct() {
     useEffect(() => {
         if (!isRunned.current) {
             getAllProducts().then(res => {
-                res.data?.products.map(product => setSkus(skus => [...skus, product.sku]))
+                res.data.map(product => setSkus(skus => [...skus, product.sku]))
             });
         }
         return () => {
@@ -80,18 +80,18 @@ function AddProduct() {
                     handleChange={handleOnChange} errorMessage={errorMessage} />
 
 
-                <SelectField name="productType" label='Type Switcher' selects={selects} required={true}
+                <SelectField name="type" label='Type Switcher' selects={selects} required={true}
                     placeholder='Choose product type' handleChange={handleOnChange} errorMessage={errorMessage} />
 
 
 
 
-                {product?.productType === 'DVD' ?
+                {product?.type === 'DVD' ?
 
                     <InputField name="size" id="size" label="Size (MB)" type='number' required={true}
                         handleChange={handleOnChange} errorMessage={errorMessage} />
 
-                    : product?.productType === "Furniture" ?
+                    : product?.type === "Furniture" ?
 
                         <>
                             <InputField name="height" id="height" label="Height (CM)" type='number' required={true}
@@ -105,7 +105,7 @@ function AddProduct() {
 
                         </>
 
-                        : product?.productType === 'Book' ?
+                        : product?.type === 'Book' ?
 
                             <InputField name="weight" id="weight" label="Weight (KG)" type='number' required={true}
                                 handleChange={handleOnChange} errorMessage={errorMessage} />
