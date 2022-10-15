@@ -20,8 +20,6 @@ function ProductList() {
         };
     }, [products])
 
-    console.log(products)
-
     const handleSelectProduct = (product) => {
         let newArr = [...selected, product]
         setSelected(newArr)

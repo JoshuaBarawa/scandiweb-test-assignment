@@ -53,7 +53,6 @@ function AddProduct() {
     }
 
 
-
     return (
 
         <form id="product_form" onSubmit={handleCreateProduct}>
@@ -82,7 +81,6 @@ function AddProduct() {
 
                 <SelectField name="type" label='Type Switcher' selects={selects} required={true}
                     placeholder='Choose product type' handleChange={handleOnChange} errorMessage={errorMessage} />
-
 
 
 
