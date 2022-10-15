@@ -1,18 +1,13 @@
 <?php 
 	
 	abstract class database {
-		// private $host = "localhost";
-		// private $db_name = "techroll_ecommerce";
-		// private $username = "techroll_ecommerce";
-		// private $password = "zSkBoM#63x-5";
-		// public $conn;
-
 		private $host = "localhost";
-		private $username = "root";
-		private $db_name = "test_assignment";
-		private $password = "tryagain";
+		private $db_name = "techroll_ecommerce";
+		private $username = "techroll_ecommerce";
+		private $password = "zSkBoM#63x-5";
 		public $conn;
 
+	
 		public function getConnection(){
   
 			$this->conn = null;
