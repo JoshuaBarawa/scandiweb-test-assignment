@@ -3,20 +3,17 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: DELETE");
   
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-include_once './config/database.php';
-include_once 'product.php';
+require_once('./classes/app.php');
   
-$database = new Database();
-$db = $database->getConnection();
-  
-$product = new Product($db);
-  
+$app = new app();
 $data = json_decode(file_get_contents("php://input"));
   
-$product->id = $data->id;
-  
-if($product->delete()){
+
+if($app->delete_product($data->id)){
     http_response_code(200);
     echo json_encode(array("message" => "Product was deleted."));
 }

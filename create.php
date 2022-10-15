@@ -13,36 +13,23 @@ header("HTTP/1.1 200 OK");
 die();
 }
   
-  
 
-include_once './config/database.php';
-include_once 'product.php';
-
-error_reporting(-1); // reports all errors
-ini_set("display_errors", "1"); // shows all errors
+error_reporting(-1); 
+ini_set("display_errors", "1");
 ini_set("log_errors", 1);
 ini_set("error_log", "/tmp/php-error.log");
 
 
-  
-$database = new Database();
-$db = $database->getConnection();
-  
-$product = new Product($db);
-$data = json_decode(file_get_contents("php://input"));
 
-    
-    $product->sku = $data->sku;
-    $product->name = $data->name;
-    $product->price = $data->price;
-    $product->productType = $data->productType;
-    $product->size = $data->size;
-    $product->weight = $data->weight;
-    $product->height = $data->height;
-    $product->width = $data->width;
-    $product->length = $data->length;
+require_once('./classes/app.php');
+
+$app = new app();
   
-    if($product->createProduct()){
+$json = json_decode(file_get_contents('php://input'));
+
+
+  
+    if($app->create_product($json)){
         http_response_code(200);
         echo json_encode(array("message" => "Product was created."));
     }
@@ -51,6 +38,7 @@ $data = json_decode(file_get_contents("php://input"));
         http_response_code(500);
         echo json_encode(array("message" => "Unable to create product."));
     }
+
 
   
 ?>
