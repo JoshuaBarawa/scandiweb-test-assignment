@@ -27,8 +27,7 @@ function ProductList() {
 
     const handleDeleteProducts = () => {
         selected.map(item => deleteProduct(item.id));
-        setProducts(products.filter(value => !selected.includes(value)))
-       
+        setProducts(products.filter(value => !selected.includes(value)))  
     }
 
     return (
