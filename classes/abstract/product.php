@@ -29,47 +29,17 @@ abstract class product extends database {
     }
 
     
-
-    // public function createProduct(){
-
-    //     $query = "INSERT INTO
-    //              products  SET 
-    //             sku=:sku, name=:name, price=:price, type=:type, size=:size, weight=:weight, height=:height, 
-    //             width=:width, length=:length";
-
-    //     $stmt = $this->conn->prepare($query);
-
-
-    //     $stmt->bindParam(":sku", $this->sku);
-    //     $stmt->bindParam(":name", $this->name);
-    //     $stmt->bindParam(":price", $this->price);
-    //     $stmt->bindParam(":type", $this->type);
-    //     $stmt->bindParam(":size", $this->size);
-    //     $stmt->bindParam(":weight", $this->weight);
-    //     $stmt->bindParam(":height", $this->height);
-    //     $stmt->bindParam(":width", $this->width);
-    //     $stmt->bindParam(":length", $this->length);
-
-    //     if ($stmt->execute()) return true;
-        
-    //     return false;
-    // }
-
-
-
     public function delete_product(){
 
         $query = "DELETE FROM products WHERE id = ?";
 
         $stmt = $this->conn->prepare($query);
         $this->id = htmlspecialchars(strip_tags($this->id));
-
         $stmt->bindParam(1, $this->id);
 
         if ($stmt->execute()) {
             return true;
         }
-
         return false;
     }
 }
