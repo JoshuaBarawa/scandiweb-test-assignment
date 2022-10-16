@@ -13,7 +13,6 @@ function ProductList() {
     useEffect(() => {
         if (!isRunned.current) {
             getAllProducts().then(res => res.data ? setProducts(res.data) : products)
-
         }
         return () => {
             isRunned.current = true;
